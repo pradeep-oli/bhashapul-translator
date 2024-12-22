@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BhashaPul</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/bhashapul-favicon.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BhashaPul: AI Language Translator</h1>
+            <p class="subtitle">Translate your text instantly</p>
+        </header>
+        <div class="controls-wrapper">
+            <div class="language-switch">
+                <button class="switch-btn" id="switch-btn" title="Switch languages">
+                    <div class="switch-content">
+                        <div class="lang-pair from-lang">
+                            <img src="https://flagcdn.com/w20/us.png" alt="English">
+                            <span>English</span>
+                        </div>
+                        <div class="switch-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 12h16M13 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                        <div class="lang-pair to-lang">
+                            <img src="https://flagcdn.com/w20/np.png" alt="Nepali">
+                            <span>Nepali</span>
+                        </div>
+                    </div>
+                </button>
+                <div class="lang-dropdown">
+                    <div class="dropdown-header">Translate to:</div>
+                    <div class="lang-options">
+                        <div class="lang-option" data-lang="en">
+                            <img src="https://flagcdn.com/w20/us.png" alt="English">
+                            <span>English</span>
+                        </div>
+                        <div class="lang-option" data-lang="ne">
+                            <img src="https://flagcdn.com/w20/np.png" alt="Nepali">
+                            <span>Nepali</span>
+                        </div>
+                        <div class="lang-option" data-lang="ja">
+                            <img src="https://flagcdn.com/w20/jp.png" alt="Japanese">
+                            <span>Japanese</span>
+                        </div>
+                        <div class="lang-option" data-lang="ko">
+                            <img src="https://flagcdn.com/w20/kr.png" alt="Korean">
+                            <span>Korean</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="translator-box">
+            <div class="language-container">
+                <div class="input-box">
+                    <div class="lang-label">
+                        <img id="from-lang-flag" src="https://flagcdn.com/w20/us.png" alt="English">
+                        <label id="from-lang-label" for="english-text">English</label>
+                    </div>
+                    <div class="textarea-container">
+                        <textarea id="english-text" placeholder="Enter text in English"></textarea>
+                        <button id="speak-btn" title="Speak to translate">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <div class="lang-label">
+                        <img id="to-lang-flag" src="https://flagcdn.com/w20/np.png" alt="Nepali">
+                        <label id="to-lang-label" for="nepali-text">Nepali</label>
+                    </div>
+                    <textarea id="nepali-text" placeholder="नेपाली अनुवाद यहाँ देखिनेछ" readonly></textarea>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <button id="translate-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04z"/>
+                        <path d="M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
+                    </svg>
+                    Translate
+                </button>
+                <button id="copy-btn" title="Copy translation">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 3H4v13h12V3z"/>
+                        <path d="M8 7h8"/>
+                        <path d="M8 11h8"/>
+                        <path d="M8 15h8"/>
+                        <path d="M20 7v13H8"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
