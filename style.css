@@ -271,15 +271,6 @@ body.dark-mode .speak-btn:hover {
         min-height: 95vh;
     }
 
-    @media (max-height: 750px) {
-        body {
-            margin-top: -10px;
-            padding: 5px;
-            padding-top: 5px;
-            min-height: 95vh;
-        }
-
-
     .container {
         margin-top: 10px;
     }
@@ -1158,5 +1149,4 @@ body.dark-mode .delete-history-item {
 body.dark-mode .delete-history-item:hover {
     background: rgba(255, 118, 117, 0.1);
     color: #ff7675;
-}
 }
